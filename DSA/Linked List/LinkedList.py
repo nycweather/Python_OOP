@@ -1,29 +1,40 @@
 ##LinkedList
 
 class Node:
-
-    #Constructor
     def __init__(self, data):
-        self.next = None 
+        '''
+        Constructor.
+        Data will contain the data inside each node.
+        Next will refer to the next node.
+        '''
         self.data = data 
+        self.next = None 
     
-    #Get string values
     def __repr__(self):
+        '''
+        This method will return the string method of Node data.
+        '''
         return self.data
     
 
 class SinglyLinkedList:
-    #Constructor
-    def __init__(self, head=None) -> None:
+    def __init__(self, head=None):
+        '''
+        When first initialized this will be the start of the list.
+        '''
         self.head = head
 
-    #'Show' the structure of the list
     def __str__(self):
+        '''
+        This method will iter through the whole list and return it.
+        '''
         vals = [str(val.data) for val in self]
         return "->".join(vals)
 
-    #Give the ability to loop over the list
     def __iter__(self):
+        '''
+        This will give the ability to loop over.
+        '''
         curr = self.head
         while curr:
             yield curr
@@ -31,6 +42,9 @@ class SinglyLinkedList:
 
     #Add data to list, if list does not have a head current node will become the head
     def add(self, data):
+        '''
+        This method will take in a data, create the node and chain to the end of the list.
+        '''
         val = Node(data)
         if not self.head:
             self.head = val
@@ -43,6 +57,9 @@ class SinglyLinkedList:
 
     #Return how many elements are in the list
     def count(self):
+        '''
+        This item will iter thorugh the list and count how many items are in the list.
+        '''
         if not self.head:
             return 0
         else:
@@ -54,12 +71,18 @@ class SinglyLinkedList:
             return count
 
     def add_to_first(self, data):
+        '''
+        This item will take in data, create a Node and put it in at the beginning of the list.
+        '''
         val = Node(data)
         val.next = self.head
         self.head = val
 
     #insert node at give index
     def add_at_index(self, index: int, data):
+        '''
+        This method will take in two arguments (index) and data, create the Node and insert it within the list.
+        '''
         assert index >= 1, f"Index {index} not greater than 1."
         if index == 1:
             return self.add_to_first(data)
@@ -79,6 +102,9 @@ class SinglyLinkedList:
 
     #delete node given index            
     def delete(self, index):
+        '''
+        Delete a node given the index number.
+        '''
         assert index >= 1, f"Index {index} is less than 1."
         if not self.head:
             return "List is empty"
@@ -101,6 +127,9 @@ class SinglyLinkedList:
 
     #search given item
     def search(self, val):
+        '''
+        Search through the list and returns string if item in list.
+        '''
         if not self.head:
             return 0
         else:
@@ -113,8 +142,11 @@ class SinglyLinkedList:
                 return f"{val} at index {count}"
             return "{val} not in list"
 
-    #pop mrthod to pop off last element
+    #pop method to pop off last element
     def pop(self):
+        '''
+        Deletes last item off list.
+        '''
         curr = self.head
         while curr.next.next:
             curr = curr.next
@@ -124,6 +156,9 @@ class SinglyLinkedList:
 
     #reverse list 
     def reverse(self):
+        '''
+        Reverse the list.
+        '''
         prev = None
         curr = self.head
         while curr:
