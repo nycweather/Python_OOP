@@ -37,6 +37,7 @@ Intended tree
 PreOrder Traversal: A, L1, L2, R2, R1, L3, R3
 InOrder Traversal: L2, L1, R2, A, L3, R1, R3
 PostOrder Traversal: L2, R2, L1, L3, R3, R1, A
+
 '''
     
 def preOrder(rootNode):
@@ -71,4 +72,24 @@ def postOrder(rootNode):
     postOrder(rootNode.right)
     print(rootNode.data)
 
-postOrder(custom)
+from collections import deque
+def levelOrder(root):
+    if not root:
+        return []
+    
+    result = []
+    queue = deque([root])
+    
+    while queue:
+        node = queue.popleft()
+        result.append(str(node.data))
+        
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+    
+    return result
+
+
+levelOrder(custom)
