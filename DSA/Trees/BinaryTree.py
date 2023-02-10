@@ -52,6 +52,7 @@ def preOrder(rootNode):
     preOrder(rootNode.left)
     preOrder(rootNode.right)
 
+
 def inOrder(rootNode):
     '''
     This function will goto the deepest left node then print node then goto right and goto the deepest left node of the right child and continue.
@@ -61,6 +62,7 @@ def inOrder(rootNode):
     inOrder(rootNode.left)
     print(rootNode.data)
     inOrder(rootNode.right)
+
 
 def postOrder(rootNode):
     '''
@@ -72,24 +74,29 @@ def postOrder(rootNode):
     postOrder(rootNode.right)
     print(rootNode.data)
 
-from collections import deque
+
 def levelOrder(root):
-    if not root:
-        return []
-    
     result = []
-    queue = deque([root])
-    
+    if not root:
+        return result
+
+    queue = [root]
     while queue:
-        node = queue.popleft()
-        result.append(str(node.data))
-        
-        if node.left:
-            queue.append(node.left)
-        if node.right:
-            queue.append(node.right)
-    
-    return result
+        level = []
+        size = len(queue)
+        print(f' Size ->{size}')
+        for _ in range(size):
+            node = queue.pop(0)
+            level.append(node.data)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        print(f' level ->{level}')
+        result.append(level)
+        print(f' Result ->{result}')
+
+    return print(result)
 
 
 levelOrder(custom)
