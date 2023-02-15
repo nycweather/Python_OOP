@@ -6,8 +6,8 @@ class Card:
     def __repr__(self):
         return f"Card({self.value} of {self.suit})"
     
-    def __it__(self):
-        return (self.suit, self.value)
+    def __it__(self, other):
+        return self.value < other.value
 
     def __eq__(self, other: object):
         return self.value == other.value
