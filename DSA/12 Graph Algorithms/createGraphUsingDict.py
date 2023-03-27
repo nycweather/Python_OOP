@@ -18,6 +18,17 @@ class Graph:
                     visited.append(others)
                     queue.append(others)
 
+    def depthFirstSearch(self, vertex):
+        visited = [vertex]
+        stack = [vertex]
+        while stack:
+            popped = stack.pop()
+            print(popped)
+            for others in self.graphDict[popped]:
+                if others not in visited:
+                    visited.append(others)
+                    stack.append(others)
+
 customDict = {
     "a": ["b", "c"],
     "b": ["a", "d", "e"],
@@ -30,4 +41,4 @@ customDict = {
 custom = Graph(customDict)
 custom.addEdge("e", "c")
 
-custom.breadthFirstSearch("a")
+custom.depthFirstSearch("a")

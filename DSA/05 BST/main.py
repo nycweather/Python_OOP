@@ -94,6 +94,21 @@ def delete(root, val):
             root.right = delete(root.right, min)
     return
 
+def inorderNode(root, lookup):
+    if not root: return
+    result = []
+    stack = []
+    while root or stack:
+        while root:
+            stack.append(root)
+            root = root.left
+        root = stack.pop()
+        result.append(root.data)
+        root = root.right
+    return result
+
+        
+
 custom = BST(None)
 insert(custom, 70)
 insert(custom, 50)
@@ -102,12 +117,14 @@ insert(custom, 30)
 insert(custom, 60)
 insert(custom, 80)
 insert(custom, 100)
-insert(custom, 20)
-insert(custom, 40)
+# insert(custom, 20)
+# insert(custom, 40)
 
 #print(custom.data)
-print(levelOrder(custom))
-print(search(custom, 45))
-print(getMin(custom))
-delete(custom, 80)
-print(levelOrder(custom))
+# print(levelOrder(custom))
+# print(search(custom, 45))
+# print(getMin(custom))
+# delete(custom, 80)
+# print(levelOrder(custom))
+print(inOrder(custom))
+print(inorderNode(custom, 30))
