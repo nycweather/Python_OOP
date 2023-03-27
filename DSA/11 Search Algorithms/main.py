@@ -6,7 +6,6 @@ def linearSearch(list, value):
 
 def binarySearch(list, value):
     left, right = 0, len(list) - 1
-    count = 0
     while left <= right:
         mid = (left + right) // 2
         print(left, mid, right)
