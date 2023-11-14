@@ -18,6 +18,9 @@ class Node:
     
 
 class SinglyLinkedList:
+    """
+    This class will create a singly linked list.
+    """
     def __init__(self, head=None):
         '''
         When first initialized this will be the start of the list.
