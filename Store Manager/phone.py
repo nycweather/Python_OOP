@@ -7,7 +7,7 @@ class Phone(Item):
         super().__init__(name, price, quantity)
 
         #Raise flags for correct inputs
-        assert broken_count >= 0, f"Broken Phone {self.broken_count} is not greater than 0"
+        assert broken_count < 0, f"Broken Phone {self.broken_count} is not greater than 0"
 
         #Attributes specific to phones
         self.broken_count = broken_count
