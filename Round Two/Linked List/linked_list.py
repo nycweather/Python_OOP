@@ -13,6 +13,8 @@ class Node:
 
 
 class LinkedList:
+    """Linked List Class"""
+
     def __init__(self):
         self.head = None
         self.tail = None
@@ -41,6 +43,12 @@ class LinkedList:
                 return True
             curr = curr.next
         return False
+
+    def __del__(self):
+        print(f"{self.__class__.__name__} object deleted from {self.__class__}")
+
+    def __sizeof__(self) -> int:
+        return self.length
 
     def push(self, val, index=None):
         if index is None or index >= self.length:
@@ -173,3 +181,5 @@ my_list.reverse()
 # my_list.unshift(5)
 # my_list.shift()
 print(my_list)
+
+temp = LinkedList.__dict__
