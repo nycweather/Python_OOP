@@ -1,5 +1,5 @@
 def numFactor(num):
-    if num in (0,1,2):
+    if num < 3:
         return 1
     elif num == 3:
         return 2
@@ -9,4 +9,4 @@ def numFactor(num):
         case3 = numFactor(num-4)
         return case1+case2+case3
 
-print(numFactor(5))
+print(numFactor(10))
