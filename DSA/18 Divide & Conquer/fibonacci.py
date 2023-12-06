@@ -1,8 +1,9 @@
 def fib(num):
-    if num == 0:
-        return 0
-    elif num == 1:
-        return 1
-    return fib(num - 1) + fib(num - 2)
+    arr = [0,1]
+    for _ in range(num-1):
+        temp = arr[0] + arr[1]
+        arr[0] = arr[1]
+        arr[1] = temp
+    return arr[1]
 
-print(fib(8))
+print(fib(100_000))
