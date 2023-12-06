@@ -9,4 +9,5 @@ def numFactor(num):
         case3 = numFactor(num-4)
         return case1+case2+case3
 
-print(numFactor(10))
+
+print(numFactor(4))
