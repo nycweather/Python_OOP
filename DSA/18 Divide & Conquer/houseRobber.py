@@ -24,8 +24,8 @@ def rob_DP(nums):
 
 
 # Example usage
-print(rob_DP([6, 9, 3, 1, 2, 4]))  # Output: 4
+# print(rob_DP([6, 9, 3, 1, 2, 4]))  # Output: 4
 
 
-# houses = [6,7,1,30,8,2]
-# print(rob(houses))
+houses = [6, 7, 1, 30, 8, 2]
+print(rob(houses))

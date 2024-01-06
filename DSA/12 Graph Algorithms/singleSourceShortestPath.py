@@ -28,4 +28,4 @@ customDict = {
     "g": ["f"]
 }
 g = Graph(customDict)
-print(g.bfs("a", "c"))
+print(g.bfs("a", "f"))

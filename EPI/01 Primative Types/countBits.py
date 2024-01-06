@@ -20,4 +20,15 @@ def count_bits(num: int) -> int:
         print("after", num_bits, num)
     return num_bits
 
-print(count_bits(32))
+def flip_bits(num):
+    print("Binary:", bin(num))
+    print("Bitwise | OR:", bin(num | 0))
+    print("Bitwise & AND:", bin(num & 0))
+    print("Bitwise ^ XOR:", bin(num ^ 0))
+    print("Bitwise ~ NOT:", bin(~num))
+    print("Bitwise >> Right Shift:", bin(num >> 1))
+    print("Bitwise << Left Shift:", bin(num << 1))
+
+
+
+print(flip_bits(0))

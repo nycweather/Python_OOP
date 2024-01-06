@@ -43,7 +43,7 @@ class SinglyLinkedList:
             yield curr
             curr = curr.next
 
-    #Add data to list, if list does not have a head current node will become the head
+    # Add data to list, if list does not have a head current node will become the head
     def add(self, data):
         '''
         This method will take in a data, create the node and chain to the end of the list.
@@ -58,7 +58,7 @@ class SinglyLinkedList:
             curr.next = val
         return f'Added {data} to list'
 
-    #Return how many elements are in the list
+    # Return how many elements are in the list
     def count(self):
         '''
         This item will iter thorugh the list and count how many items are in the list.
